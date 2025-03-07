@@ -1,4 +1,4 @@
-import { CanvasContextType } from "../../types";
+import { CanvasContextType } from "@_types/index";
 
 abstract class Transition {
   abstract canvas2d: HTMLCanvasElement;

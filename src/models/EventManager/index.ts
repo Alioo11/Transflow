@@ -1,4 +1,4 @@
-import { IEventManager } from "../../types/eventManager";
+import { IEventManager } from "@_types/eventManager";
 
 class EventManager<T> implements IEventManager<T> {
   private _events = new Map<keyof T, Array<(data: unknown) => void>>();

@@ -1,5 +1,5 @@
-import vertexShaderSource from "../../../constants/defaultVertexShaderSource";
-import getCanvasWebglContext from "../../utils/getGL";
+import vertexShaderSource from "@constants/defaultVertexShaderSource";
+import getCanvasWebglContext from "@utils/getGL";
 
 class Webgl {
   HTMLCanvasElement: HTMLCanvasElement;

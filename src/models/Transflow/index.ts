@@ -1,5 +1,5 @@
 import html2canvas from "html2canvas";
-import GrowTransition from "../Transition/Grow";
+import GrowTransition from "@models/Transition/Grow";
 
 class Transflow {
   HTMLElement: HTMLElement;

@@ -1,8 +1,8 @@
-import Transition from "..";
-import { CanvasContextType } from "../../../types";
-import { wait } from "../../../utils/wait";
-import Webgl from "../../Webgl";
+import Transition from "@models/Transition";
+import Webgl from "@models/Webgl";
+import { wait } from "@utils/wait";
 import shader from "./shader";
+import type { CanvasContextType } from "@_types/index";
 
 class GrowTransition extends Transition {
   canvas2d: HTMLCanvasElement;

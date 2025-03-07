@@ -2,22 +2,23 @@
   "name": "tranzit",
   "version": "1.0.5",
   "description": "a simple transition library",
-  "module": "build/main.js",
-  "main": "build/main.js",
-  "types": "build/types/index.d.ts",
+  "module": "dist/main.js",
+  "main": "dist/main.js",
+  "type": "commonjs",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js --open",
-    "create-deceleration-bundle": "npx dts-bundle-generator -o ./build/types/index.d.ts ./src/index.ts",
+    "create-deceleration-bundle": "npx dts-bundle-generator -o ./dist/types/index.d.ts ./src/index.ts",
     "build": "webpack --config webpack.prod.js && npm run create-deceleration-bundle",
     "publish:patch": "npm run build && npm version patch && npm publish"
   },
   "exports": {
-    "import": "./build/main.js",
-    "require": "./build/main.js"
+    "import": "./dist/main.js",
+    "require": "./dist/main.js"
   },
   "author": "Ali Salehi",
   "files": [
-    "build"
+    "dist"
   ],
   "license": "ISC",
   "dependencies": {

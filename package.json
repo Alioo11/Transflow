@@ -13,6 +13,10 @@
     "build": "webpack --config webpack.prod.js && npm run create-deceleration-bundle",
     "publish:patch": "npm run build && npm version patch && npm publish"
   },
+  "exports": {
+    "import": "./build/main.js",
+    "require": "./build/main.js"
+  },
   "author": "Ali Salehi",
   "files": [
     "build"

@@ -1,3 +1,7 @@
 import Tranzit from "./models/Tranzit";
 
-export default Tranzit;
+const dummyLogger = () => {
+  console.log("dummy log :)");
+};
+
+export { dummyLogger, Tranzit };

@@ -10,7 +10,8 @@
     "test": "jest --config jest.config.js",
     "dev": "webpack-dev-server --config webpack.dev.js --open",
     "create-deceleration-bundle": "npx dts-bundle-generator -o ./build/types/index.d.ts ./src/index.ts",
-    "build": "webpack --config webpack.prod.js && npm run create-deceleration-bundle"
+    "build": "webpack --config webpack.prod.js && npm run create-deceleration-bundle",
+    "publish:patch" : "npm run build && npm version patch && npm publish"
   },
   "author": "Ali Salehi",
   "files": [

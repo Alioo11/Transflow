@@ -1,7 +1,7 @@
 import html2canvas from "html2canvas";
-import GrowTransition from "@models/Transition/Grow";
+import GrowTransition from "@models/Transition/Grow"
 
-class Transflow {
+class Tranzit {
   HTMLElement: HTMLElement;
 
   constructor(HTMLElement?: HTMLElement) {
@@ -54,4 +54,4 @@ class Transflow {
   };
 }
 
-export default Transflow;
+export default Tranzit;

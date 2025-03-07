@@ -46,7 +46,7 @@ void main() {
 }
 `;
 
-class Transflow {
+class Transzit {
   HTMLElement: HTMLElement;
 
   constructor(HTMLElement?: HTMLElement) {
@@ -120,9 +120,9 @@ const htmlElement = document.documentElement;
 if (!themeToggleBtn) throw new Error("Theme toggle button not found");
 
 function setTheme(theme: string) {
-  const transflow = new Transflow();
+  const tranzit = new Transzit();
 
-  transflow.startTransition(() => {
+  tranzit.startTransition(() => {
     htmlElement.setAttribute("data-bs-theme", theme);
     localStorage.setItem("theme", theme);
     //@ts-ignore
@@ -134,4 +134,4 @@ themeToggleBtn.addEventListener("click", () => {
   setTheme(htmlElement.getAttribute("data-bs-theme") === "light" ? "dark" : "light");
 });
 
-export default Transflow;
+export default Transzit;

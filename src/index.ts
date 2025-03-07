@@ -1,3 +1,3 @@
-import Tranflow from "./models/Transflow";
+import Tranzit from "./models/Tranzit";
 
-export { Tranflow };
+export { Tranzit };

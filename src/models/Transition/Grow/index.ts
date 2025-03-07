@@ -17,7 +17,7 @@ class GrowTransition extends Transition {
     this.webgl = new Webgl(canvasWebgl, shader);
 
     this.webgl.bindTexture(canvas2d);
-    this.webgl.bindUniform("u_duration", 1);
+    this.webgl.bindUniform("u_duration", 0.3);
   }
 
   triggerAnimation = async () => {
@@ -33,7 +33,7 @@ class GrowTransition extends Transition {
     animationLoop();
 
     /** !!TEMPORARILY HARD CODED TRANSITION DURATION!! */
-    await wait(2000);
+    await wait(500);
     running = false;
 
     this.canvas2d.remove();

@@ -8,9 +8,9 @@ uniform float u_time;
 
 uniform float u_duration;
 
-float speed = 50.0;
-float rippleWidth = 30.0;
-float rippleHeight = 0.02;
+float speed = 100.0;
+float rippleWidth = 20.0;
+float rippleHeight = 0.1;
 
 void main() {  
   vec2 st = v_texCoord;
@@ -27,7 +27,7 @@ void main() {
     
     float maxRadius = 3.0;
     float innerRadius = smoothstep(0.0, 1.0, u_time / (u_duration * 3.0)) * maxRadius;
-    float outerRadius = innerRadius - 0.3;
+    float outerRadius = innerRadius - 0.4;
 
     vec4 color = texture2D(u_texture, rippleUV);
     

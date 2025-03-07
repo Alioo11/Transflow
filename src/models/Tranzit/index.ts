@@ -12,14 +12,18 @@ class Tranzit {
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
+    await document.fonts.ready;
     const canvas = await html2canvas(document.body, {
       scrollX: -window.scrollX,
       scrollY: -window.scrollY,
       width: viewportWidth,
       height: viewportHeight,
       windowWidth: viewportWidth,
+      ignoreElements: (element) => element.tagName === "text",
       windowHeight: viewportHeight,
       useCORS: true,
+      foreignObjectRendering:true,
+      scale:window.devicePixelRatio,
     });
 
     return canvas;

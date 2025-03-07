@@ -97,7 +97,7 @@ class Webgl {
 
   render = () => {
     if (!this.startTime) this.startTime = new Date().getTime();
-    const timePassed = (new Date().getTime() - this.startTime) / 1000;
+    const timePassed = ((new Date().getTime() - this.startTime) / 1000) + 0.2;
 
     this.gl.uniform1f(this.timeLocation, timePassed);
 

@@ -15,9 +15,9 @@ uniform float u_time;
 
 uniform float u_duration;
 
-float speed = 50.0;
-float rippleWidth = 30.0;
-float rippleHeight = 0.02;
+float speed = 100.0;
+float rippleWidth = 20.0;
+float rippleHeight = 0.1;
 
 void main() {  
   vec2 st = v_texCoord;
@@ -34,7 +34,7 @@ void main() {
     
     float maxRadius = 3.0;
     float innerRadius = smoothstep(0.0, 1.0, u_time / (u_duration * 3.0)) * maxRadius;
-    float outerRadius = innerRadius - 0.3;
+    float outerRadius = innerRadius - 0.4;
 
     vec4 color = texture2D(u_texture, rippleUV);
     
@@ -57,6 +57,7 @@ class Transzit {
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
+    await document.fonts.ready
     const canvas = await html2canvas(document.body, {
       scrollX: -window.scrollX,
       scrollY: -window.scrollY,
@@ -65,6 +66,9 @@ class Transzit {
       windowWidth: viewportWidth,
       windowHeight: viewportHeight,
       useCORS: true,
+      // ignoreElements: (element) => element.tagName === "text",
+      // foreignObjectRendering:true,
+      // scale:window.devicePixelRatio,
     });
 
     return canvas;
@@ -93,7 +97,7 @@ class Transzit {
     const webgl = new Webgl(canvasWithWebglContext, testShaderCode);
     webgl.bindTexture(canvasWith2dContext);
 
-    webgl.bindUniform("u_duration", 1);
+    webgl.bindUniform("u_duration", .3);
 
     let running = false;
     
@@ -105,7 +109,7 @@ class Transzit {
     running = true
     renderLoop();
 
-    await wait(2000);
+    await wait(500);
     running = false;
 
     canvasWith2dContext.remove();
